@@ -3,7 +3,7 @@
 let algebra = 5;
 let geography = 4;
 let physics = 4;
-let averageMarks = algebra + geography + physics / 3;
+let averageMarks = (algebra + geography + physics) / 3;
 console.log(averageMarks);
 
 // Задание 2
