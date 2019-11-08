@@ -32,21 +32,23 @@ function getAverageMark(marks) {
   let total = 0;
   if (marks.length > 5) {
     marks.splice(5);
-    console.log(`Среднее значение первых 5 оценок`);
+    console.log(`Среднее значение первых 5 оценок:`);
   }
   for (let i = 0; i < marks.length; i++) {
       total += marks[i];
     }
-    console.log({total / marks.length});
+    console.log(total / marks.length);
 }
+
+getAverageMark([2, 4, 5, 4, 4, 5]);
 
 // Задание 3
 
 function askDrink(name, dateOfBirthday) {
   let today = new Date().getFullYear();
-  let birthdayYear = dateOfBirthday.getFullYear();
-  let age = today - birthdayYear;
-  let text = 0;
+  let birthdayYear = new Date(dateOfBirthday).getFullYear();
+	let age = today - birthdayYear;
+  let text;
 	if (age >= 18) {
 		text = `Не желаете ли олд-фэшн, ${name}?`;
 	} else {
@@ -54,3 +56,4 @@ function askDrink(name, dateOfBirthday) {
 	}
   return text;
 }
+console.log(askDrink('Aykansuh', new Date(2005, 17, 10)));
